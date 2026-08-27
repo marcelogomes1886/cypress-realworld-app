@@ -1,3 +1,5 @@
+import userData from '../../fixtures/userData.json';
+
 describe('Login Tests', () => {
 
   const selectorsList = {
