@@ -74,6 +74,61 @@
       "balance": 49474,
       "createdAt": "2023-12-07T04:39:38.383Z",
       "modifiedAt": "2024-03-07T00:07:36.510Z"
+    },
+    {
+      "id": "De4qXBQEc",
+      "uuid": "bbfb121c-1b07-4290-b761-159912709a19",
+      "firstName": "Test",
+      "lastName": "User",
+      "username": "testuser@example.com",
+      "password": "$2a$10$PEiQTepfaZiV5vLc0b2R0Onp.ngwoNbmsWe39IQO1qt/73SUcaM52",
+      "balance": 0,
+      "createdAt": "2026-08-30T16:53:13.393Z",
+      "modifiedAt": "2026-08-30T16:53:13.393Z"
+    },
+    {
+      "id": "TzH3ySBVm",
+      "uuid": "5cca0778-476a-4380-9b0c-b9b6eb8f03ae",
+      "firstName": "Test",
+      "lastName": "User",
+      "username": "testuser@example.com",
+      "password": "$2a$10$n3F3PP0QQEl52XJpaj4pLeXpz4X3fv.EClrT3Tez4j9MjsHvfBlUa",
+      "balance": 0,
+      "createdAt": "2026-08-30T16:54:12.664Z",
+      "modifiedAt": "2026-08-30T16:54:12.664Z"
+    },
+    {
+      "id": "vmY2JYax5",
+      "uuid": "ea4c637f-ced2-4176-bde8-6909aa3cf6a4",
+      "firstName": "Test",
+      "lastName": "User",
+      "username": "testuser@example.com",
+      "password": "$2a$10$YmgtB15kay1mUyyMih.QXeOAass0brE6Vtdp9YoC63F/H2mJ/l9UC",
+      "balance": 0,
+      "createdAt": "2026-08-30T16:59:37.714Z",
+      "modifiedAt": "2026-08-30T16:59:37.714Z"
+    },
+    {
+      "id": "FKkMFIKTD",
+      "uuid": "6f9c1159-88ef-4ec6-90ab-ca210519390a",
+      "firstName": "Test",
+      "lastName": "User",
+      "username": "testuser@example.com",
+      "password": "$2a$10$tJesPcp6js9dknANh0xut.PrWCXwcaEZofy4f1h0.OMT0x0ZMMWiy",
+      "balance": 0,
+      "createdAt": "2026-08-30T17:01:26.530Z",
+      "modifiedAt": "2026-08-30T17:01:26.530Z"
+    },
+    {
+      "id": "AwN9BBEFR",
+      "uuid": "de2ab285-2fd7-45f5-be06-46d9e06a3338",
+      "firstName": "Test",
+      "lastName": "User",
+      "username": "testuser@example.com",
+      "password": "$2a$10$SW3C.AcGK7mALrhz8KKqpOfSkklnj08cChX.Pnk.p9RHub8N6UR92",
+      "balance": 0,
+      "createdAt": "2026-08-30T17:03:44.460Z",
+      "modifiedAt": "2026-08-30T17:03:44.460Z"
     }
   ],
   "contacts": [
@@ -10986,4 +11041,3 @@
     }
   ]
 }
-

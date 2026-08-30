@@ -5,6 +5,20 @@
   },
   "userFail": {
     "username": "usuarioinvalido@example.com",
-    "password": "senhaerrada123"
+    "password": "senhaerrada"
+  },
+  "newUserSuccess": {
+    "firstName": "Test",
+    "lastName": "User",
+    "username": "testuser@example.com",
+    "password": "Test@123456",
+    "confirmPassword": "Test@123456"
+  },
+  "newUserFail": {
+    "firstName": "",
+    "lastName": "",
+    "username": "",
+    "password": "12345",
+    "confirmPassword": "54321"
   }
 }
