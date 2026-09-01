@@ -1,106 +1,93 @@
-class SignupPage {
+class SignUpPage {
+  selectorsList() {
+    const selectors = {
+      fields: {
+        firstNameField: "#firstName",
+        lastNameField: "#lastName",
+        usernameField: "#username",
+        passwordField: "#password",
+        confirmPasswordField: "#confirmPassword"
+      },
 
-    selectorsList() {
-        const selectors = {
-            firstNameField: "[data-test='signup-first-name'] input",
-            lastNameField: "[data-test='signup-last-name'] input",
-            usernameField: "[data-test='signup-username'] input",
-            passwordField: "[data-test='signup-password'] input",
-            confirmPasswordField: "[data-test='signup-confirmPassword'] input",
-            signupButton: "[data-test='signup-submit']",
+      requireMsg: {
+        firstNameRequiredMsg: "#firstName-helper-text",
+        lastNameRequiredMsg: "#lastName-helper-text",
+        usernameRequiredMsg: "#username-helper-text",
+        passwordRequiredMsg: "#password-helper-text",
+        confirmPaswordRequireMsg: "#confirmPassword-helper-text"
+      },
 
-            firstNameError: "[data-test='signup-first-name-error']",
-            lastNameError: "[data-test='signup-last-name-error']",
-            usernameError: "[data-test='signup-username-error']",
-            passwordError: "[data-test='signup-password-error']",
-            confirmPasswordError: "[data-test='signup-confirmPassword-error']",
+      buttons: {
+        signUpButton: ".SignUpForm-submit",
+      },
 
-            loginUsernameField: "[data-test='signin-username']"
-        };
-
-        return selectors;
+      validations: {
+        signUpForm: ".SignUpForm-paper"
+      }
     }
 
-    accessSignupPage() {
-        cy.visit('/signup');
+    return selectors
+  }
 
-        cy.get(this.selectorsList().firstNameField, { timeout: 10000 })
-            .should('be.visible');
-    }
+  
+  acessSignUpPage() {
+    cy.visit('http://localhost:3000/signup')
+    cy.get(this.selectorsList().validations.signUpForm)
+  }
 
-    fillSignupForm(firstName, lastName, username, password, confirmPassword) {
+  
+  focusBlurField(field) {
+    cy.get(field).focus().blur()
+  }
 
-    cy.get(this.selectorsList().firstNameField)
-        .clear();
+  registerNewUser(firstName, lastName, username, password, confirmPassword) {
+    firstName
+      ? cy.get(this.selectorsList().fields.firstNameField).type(firstName)
+      : this.focusBlurField(this.selectorsList().fields.firstNameField)
 
-    if (firstName && firstName.trim() !== '') {
-        cy.get(this.selectorsList().firstNameField)
-            .type(firstName);
-    }
+    lastName
+      ? cy.get(this.selectorsList().fields.lastNameField).type(lastName)
+      : this.focusBlurField(this.selectorsList().fields.lastNameField)
 
-    cy.get(this.selectorsList().lastNameField)
-        .clear();
+    username
+      ? cy.get(this.selectorsList().fields.usernameField).type(username)
+      : this.focusBlurField(this.selectorsList().fields.usernameField)
 
-    if (lastName && lastName.trim() !== '') {
-        cy.get(this.selectorsList().lastNameField)
-            .type(lastName);
-    }
+    password
+      ? cy.get(this.selectorsList().fields.passwordField).type(password)
+      : this.focusBlurField(this.selectorsList().fields.passwordField)
 
-    cy.get(this.selectorsList().usernameField)
-        .clear();
+    confirmPassword
+      ? cy.get(this.selectorsList().fields.confirmPasswordField).type(confirmPassword)
+      : this.focusBlurField(this.selectorsList().fields.confirmPasswordField)
+  }
 
-    if (username && username.trim() !== '') {
-        cy.get(this.selectorsList().usernameField)
-            .type(username);
-    }
+  
+  clickSignUpButton() {
+    cy.get(this.selectorsList().buttons.signUpButton).click()
+  }
 
-    cy.get(this.selectorsList().passwordField)
-        .clear();
+  
+  checkRequireMsg(errorMsg) {
+    cy.get(this.selectorsList().requireMsg[errorMsg])
+  }
 
-    if (password && password.trim() !== '') {
-        cy.get(this.selectorsList().passwordField)
-            .type(password);
-    }
+  checkSignUpButton() {
+    cy.get(this.selectorsList().buttons.signUpButton).should('be.disabled')
+  }
 
-    cy.get(this.selectorsList().confirmPasswordField)
-        .clear();
+  checkUrl(url) {
+    cy.url().should('eq', `${url}`)
+  }
 
-    if (confirmPassword && confirmPassword.trim() !== '') {
-        cy.get(this.selectorsList().confirmPasswordField)
-            .type(confirmPassword);
-    }
+  
+  completeRegistration(firstName,lastName,username, password, confirmPassword){
+    this.acessSignUpPage()
+    this.registerNewUser(firstName,lastName,username,password,confirmPassword)
+    this.clickSignUpButton()
+    //this.checkUrl('http://localhost:3000/signin')
+  }
 
-    // Faz o primeiro campo perder o foco
-    cy.get(this.selectorsList().lastNameField).click();
-}
-    clickSignupButton() {
-        cy.get(this.selectorsList().signupButton)
-            .should('be.enabled')
-            .click();
-    }
-
-    validateSuccessfulSignup() {
-        cy.url({ timeout: 10000 })
-            .should('include', '/signin');
-
-        cy.get(this.selectorsList().loginUsernameField, { timeout: 10000 })
-            .should('be.visible');
-    }
-
-    validateFirstNameRequiredError() {
-        cy.get(this.selectorsList().firstNameError, { timeout: 5000 })
-            .should('be.visible');
-    }
-
-    validatePasswordMismatchError() {
-        cy.get(this.selectorsList().confirmPasswordError, { timeout: 5000 })
-            .should('be.visible');
-    }
-
-    validateSignupButtonDisabled() {
-        cy.get(this.selectorsList().signupButton)
-            .should('be.disabled');
-    }
 }
 
-export default SignupPage;
+export default SignUpPage;

@@ -1,24 +1,27 @@
 {
-  "userSuccess": {
-    "username": "testuser@example.com",
-    "password": "Test@123456"
-  },
-  "userFail": {
-    "username": "usuarioinvalido@example.com",
-    "password": "senhaerrada"
-  },
-  "newUserSuccess": {
-    "firstName": "Test",
-    "lastName": "User",
-    "username": "testuser@example.com",
-    "password": "Test@123456",
-    "confirmPassword": "Test@123456"
-  },
-  "newUserFail": {
-    "firstName": "",
-    "lastName": "",
-    "username": "",
-    "password": "12345",
-    "confirmPassword": "54321"
-  }
+    "userSignIn":{
+
+        "userSucess" : {
+            "username": "Heath93",
+            "password": "s3cret"
+        },
+
+        "userFail" : {
+            "username": "usernameTests",
+            "password": "passwordTest"
+        }
+    },
+
+    "userSignUp":{
+        "firstName": "FirstNameTest",
+        "lastName": "LastNameTest" ,
+        "username": "usernameTest",
+        "password": "passwordTest",
+        "confirmPassword": "passwordTest"
+    },
+
+
+    "shortPassword":"123" 
+    
+
 }
